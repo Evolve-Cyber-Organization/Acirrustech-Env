@@ -1,8 +1,8 @@
 terraform {
 backend "s3" {
-bucket = "environmet-bucket"
+bucket = "jenkins-class-yunus"
 key = "application/us-west-2/state/dev/acirrustech.tfstate"
-region = "us-west-2"
+region = "us-east-1"
   }
 }
 

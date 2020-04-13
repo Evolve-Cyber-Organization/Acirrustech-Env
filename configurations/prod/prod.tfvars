@@ -1,7 +1,7 @@
 environment = "prod"
-s3_bucket = "environment-bucket"            #Will be used to set backend.tf
+s3_bucket = "jenkins-class-yunus"            #Will be used to set backend.tf
 s3_folder_project = "environment"            #Will be used to set backend.tf
-s3_folder_region = "us-west-2"               #Will be used to set backend.tf
+s3_folder_region = "us-east-1"               #Will be used to set backend.tf
 s3_folder_type = "state"                     #Will be used to set backend.tf
 s3_tfstate_file = "acirrustech.tfstate"   #Will be used to set backend.tf
 vpc_id = "vpc-67dd1f1f"
