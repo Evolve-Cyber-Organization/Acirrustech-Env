@@ -1,7 +1,7 @@
 terraform {
 backend "s3" {
 bucket = "environmet-bucket"
-key = "application/us-west-2/state/dev/infrastructure.tfstate"
+key = "application/us-west-2/state/dev/acirrustech.tfstate"
 region = "us-west-2"
   }
 }
