@@ -6,14 +6,12 @@ then
    echo "e.g. source ./setenv configurations/data-rnd-us-vet1-v1"
    return 1
 fi
-
 if [ -z "$1" ]
 then
    echo "setenv: You must provide the name of the configuration file."
    echo "e.g. source ./setenv configurations/data-rnd-us-vet1-v1"
    return 1
 fi
-
 # Get directory we are running from
 DIR=$(pwd)
 DATAFILE="$DIR/$1"
@@ -25,7 +23,6 @@ if [ ! -f "$DATAFILE" ]; then
     echo "setenv: Configuration file not found: $DATAFILE"
     return 1
 fi
-
 # Get env from DATAFILE
 ENVIRONMENT=$(sed -nr 's/^\s*environment\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE")
 S3BUCKET=$(sed -nr 's/^\s*s3_bucket\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE")
@@ -76,9 +73,6 @@ region = "${S3BUCKETREGION}"
 EOF
 cat backend.tf
 rm -rf  .terraform/terraform.tfstate
-
 echo "#################"
-
 echo "Please use terraform_0.12.19"
-
 echo "#################"
