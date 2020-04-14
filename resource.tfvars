@@ -1,0 +1,5 @@
+bucket_name = "environment-bucket"
+ami = "ami-0bc06212a56393ee1"
+sg_group = "default"
+#key_name = "bastion"
+region = "us-west-2"
