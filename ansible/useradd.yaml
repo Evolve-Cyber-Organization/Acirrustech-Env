@@ -1,0 +1,8 @@
+---
+- name: add user
+  hosts: localhost
+  tasks:
+    - name: Create 1 user ansible
+      user:
+        name: ansible
+        state: present
