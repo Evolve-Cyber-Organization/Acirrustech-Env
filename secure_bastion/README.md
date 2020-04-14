@@ -1,6 +1,6 @@
 # Secure Bastion
 
-### Pre-requisites
+### Pre-requisites:
 #### Terraform version 0.12.19
 #### Cloud provider AWS
 
