@@ -1,0 +1,29 @@
+---
+- name: Ncpa playbook
+  hosts: all
+  become: true
+  become_method: sudo
+  user: centos
+  tasks:
+  - name: Setup  a repo
+    shell: rpm -Uvh http://repo.nagios.com/nagios/7/nagios-repo-7-4.el7.noarch.rpm
+
+  - name: Install ncpa
+    package: 
+      name: ncpa
+      state: present
+
+  - name: Change a line
+    lineinfile:
+      path: /usr/local/ncpa/etc/ncpa.cfg
+      regexp: '^community_string'
+      line: 'community_string = Str0ngT0k3n1'
+    notify: RESTART_NCPA
+
+  handlers: 
+    - name: RESTART_NCPA
+      systemd:
+        name: ncpa_listener
+        state: restarted
+
+
