@@ -1,0 +1,18 @@
+environment = "oregon"
+region = "us-west-2"
+s3_bucket = "eks-terraform-team2-oregon"           #Will be used to set backend.tf
+s3_folder_project = "application"            #Will be used to set backend.tf
+s3_folder_region = "us-west-2"               #Will be used to set backend.tf
+s3_folder_type = "state"                     #Will be used to set backend.tf
+s3_tfstate_file = "infrastructure21.tfstate"   #Will be used to set backend.tf
+vpc_id = "vpc-67dd1f1f"
+subnet1 = "subnet-250e515c"
+subnet2 = "subnet-d9a0d992"
+
+
+cluster_name = "cluster"
+instance_type = "m4.large"
+asg_max_size = "48" 
+asg_min_size = "2"
+asg_desired_capacity = "2"
+cluster_version = "1.14"
