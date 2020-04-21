@@ -1,0 +1,1 @@
+{"Modules":[{"Source":"terraform-aws-modules/autoscaling/aws","Key":"1.dev;terraform-aws-modules/autoscaling/aws.2.12.0","Version":"2.12.0","Dir":".terraform/modules/fd70829105c7162315dc550d347137a9","Root":"terraform-aws-autoscaling-2.12.0"}]}

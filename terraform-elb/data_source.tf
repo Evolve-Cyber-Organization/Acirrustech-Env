@@ -10,14 +10,22 @@
 
 
 
-# DB Endpoint
-data "terraform_remote_state" "DB"  {                            
-  backend = "s3"
-  config = {
-    bucket = "terraform-project-backend-2020-team2"
-    key = "team2/us-east-1/tools/N.Virginia/team2.tfstate"
-    region = "us-east-1"
-  }
+# # DB Endpoint
+# data "terraform_remote_state" "DB"  {                            
+#   backend = "s3"
+#   config = {
+#     bucket = "terraform-project-backend-2020-team2"
+#     key = "team2/us-east-1/tools/N.Virginia/team2.tfstate"
+#     region = "us-east-1"
+#   }
+# }
+
+
+terraform {
+    backend "s3" {
+       bucket = "environment-bucket"
+       key = "infrustructure"
+       region = "us-west-2"
+   }
+
 }
-
-

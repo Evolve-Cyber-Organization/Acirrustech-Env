@@ -4,3 +4,4 @@ resource "aws_route53_record" "wordpress" {
   type    = "CNAME"
   ttl     = "60"
   records = ["${aws_elb.wordpress.dns_name}"]
+}
