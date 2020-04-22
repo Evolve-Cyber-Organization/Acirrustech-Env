@@ -51,13 +51,11 @@ module "alb" {
   }
 }
 
-
-
-# # Create a new load balancer attachment
-# resource "aws_autoscaling_attachment" "alb" {
-#   autoscaling_group_name = "${module.artemis.this_autoscaling_group_id}"
-#   elb                    = "${aws_elb.artemis.name}"
-# }
+# Create a new load balancer attachment
+resource "aws_autoscaling_attachment" "alb" {
+  autoscaling_group_name = "example-with-elb"
+  elb                    = "my-alb"
+}
 # }
 # # # Create a new load balancer attachment
 # # resource "aws_autoscaling_attachment" "asg_attachment_bar" {
