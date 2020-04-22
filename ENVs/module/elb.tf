@@ -16,9 +16,9 @@ module "alb" {
   ],
   security_groups    = ["${var.security_group}"]
 
-  # access_logs = {
-  #   bucket = "team1-logs1"
-  # }
+  access_logs = {
+    bucket = "team1-logs1"
+  }
 
   target_groups = [
     {
