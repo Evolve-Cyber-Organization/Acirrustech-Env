@@ -52,7 +52,7 @@ module "alb" {
 }
 
 # Create a new load balancer attachment
-resource "aws_autoscaling_attachment" "alb" {
+resource "aws_autoscaling_attachment" "example-asg" {
   autoscaling_group_name = "example-with-elb"
   elb                    = "my-alb"
 }
