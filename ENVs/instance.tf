@@ -10,4 +10,5 @@ module "artemis" {
     region            =  "${var.region}"
     environment       =  "${var.environment}"
     s3_bucket         =  "${var.s3_bucket}"
+    VPC               =  "${var.VPC}"
 }

@@ -7,12 +7,17 @@ module "alb" {
   #  load_balancer_type = "application"
    load_balancer_name = "my-alb"
 
-  vpc_id             = "vpc-67dd1f1f",
-  subnets            = ["subnet-a33d13f9", "subnet-250e515c"],
-  security_groups    = ["sg-5dc4992f", "sg-0689645e075fd8fe9"]
+  vpc_id             = "${var.VPC}",
+  subnets            = [
+                               "${var.Subnet1}",      
+                               "${var.Subnet2}",
+                               "${var.Subnet3}"
+
+  ],
+  security_groups    = ["${var.security_group}"]
 
   # access_logs = {
-  #   bucket = "my-alb-logs"
+  #   bucket = "team1-logs1"
   # }
 
   target_groups = [
@@ -45,22 +50,24 @@ module "alb" {
     Environment = "Test"
   }
 
-}
-# resource "aws_autoscaling_attachment" "wordpress" {   
-#     autoscaling_group_name = "${module.dev.this_autoscaling_group_id}"    
-#     elb                    = "${aws_elb.wordpress.name}"
 
-# }
-# }
 
 
 # # Create a new load balancer attachment
-# resource "aws_autoscaling_attachment" "example-with-elb" {
-#   autoscaling_group_name = "${aws_autoscaling_group.asg.id}"
-#   elb                    = "${alb.example-with-elb.id}"
+# resource "aws_autoscaling_attachment" "alb" {
+#   autoscaling_group_name = "${module.artemis.this_autoscaling_group_id}"
+#   elb                    = "${aws_elb.artemis.name}"
 # }
+# }
+# # # Create a new load balancer attachment
+# # resource "aws_autoscaling_attachment" "asg_attachment_bar" {
+# #   autoscaling_group_name = "${aws_autoscaling_group.asg.id}"
+# #   elb                    = "${aws_elb.bar.id}"
 
-# # Create a new load balancer attachment
-# resource "aws_autoscaling_attachment" "asg_attachment_bar" {
-#   autoscaling_group_name = "${aws_autoscaling_group.asg.id}"
-#   elb                    = "${aws_elb.bar.id}"
+# }
+# # resource "aws_autoscaling_attachment" "wordpress" {   
+# #     autoscaling_group_name = "${module.dev.this_autoscaling_group_id}"    
+# #     elb                    = "${aws_elb.wordpress.name}"
+
+# # }
+# # }
