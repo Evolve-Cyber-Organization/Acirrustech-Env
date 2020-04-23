@@ -20,3 +20,5 @@ s3_tfstate_file                 =   "team4.tfstate"
  Subnet1   =  "subnet-250e515c"
  Subnet2   =  "subnet-d9a0d992"
  Subnet3    =  "subnet-a33d13f9"
+
+ VPC        = "vpc-67dd1f1f"
