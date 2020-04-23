@@ -4,3 +4,4 @@ resource "aws_route53_record" "bar" {
   type    = "CNAME"
   ttl     = "60"
   records = ["${aws_elb.bar.dns_name}"]
+}
