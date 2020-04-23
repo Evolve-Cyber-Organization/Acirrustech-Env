@@ -26,12 +26,12 @@ resource "aws_elb" "bar" {
     interval            = 30
   }
 
-   https_listeners  {
-      port               = 443
-      protocol           = "https"
-      certificate_arn    = "arn:aws:acm:us-west-2:713287746880:certificate/bb493896-560e-4864-8719-25c2058089f3"
-      target_group_index = 0
-    }
+  #  https_listeners  {
+  #     port               = 443
+  #     protocol           = "https"
+  #     certificate_arn    = "arn:aws:acm:us-west-2:713287746880:certificate/bb493896-560e-4864-8719-25c2058089f3"
+  #     target_group_index = 0
+  #   }
   
 
   
