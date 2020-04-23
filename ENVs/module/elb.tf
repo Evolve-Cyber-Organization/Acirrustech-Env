@@ -37,16 +37,19 @@ resource "aws_elb" "bar" {
   }
 }
 
-# Create a new load balancer attachment
-resource "aws_autoscaling_attachment" "asg_attachment_bar" {
-  autoscaling_group_name = "example-asg-20200422174825144700000002 "
-  elb                    =  "foobar-terraform-elb "                              #"${aws_elb.bar.id}"
-}
-resource "aws_autoscaling_attachment" "foobar-terraform-elb" {
-    autoscaling_group_name = "example-asg-20200422174825144700000002"
-    elb                    = "foobar-terraform-elb"
 
-}
+     resource "aws_autoscaling_attachment" "bar" {   
+     autoscaling_group_name = "${module.dev.this_autoscaling_group_id}"    
+     elb                    = "${aws_elb.bar.name}"
+     }
+
+
+# # Create a new load balancer attachment
+# resource "aws_autoscaling_attachment" "asg_attachment_bar" {
+#   autoscaling_group_name = "example-asg-20200422174825144700000002 "
+#   elb                    =  "foobar-terraform-elb "                              #"${aws_elb.bar.id}"
+# }
+
 
 
 
