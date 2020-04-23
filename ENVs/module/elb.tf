@@ -39,7 +39,7 @@ resource "aws_elb" "bar" {
 
 # Create a new load balancer attachment
 resource "aws_autoscaling_attachment" "asg_attachment_bar" {
-  autoscaling_group_name = "${module.asg.aws_autoscaling_group.this.name}"
+  autoscaling_group_name = "example-asg-20200422174825144700000002 "
   elb                    = "${aws_elb.bar.id}"
 }
 
