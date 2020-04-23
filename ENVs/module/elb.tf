@@ -25,6 +25,7 @@ resource "aws_elb" "bar" {
     target              = "HTTP:80/"
     interval            = 30
   }
+  
 
   #  https_listeners  {
   #     port               = 443
