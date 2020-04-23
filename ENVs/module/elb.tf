@@ -39,7 +39,7 @@ resource "aws_elb" "bar" {
 
 
      resource "aws_autoscaling_attachment" "bar" {   
-     autoscaling_group_name = "${module.dev.this_autoscaling_group_id}"    
+     autoscaling_group_name = "${module.asg.this_autoscaling_group_id}"    
      elb                    = "${aws_elb.bar.name}"
      }
 
