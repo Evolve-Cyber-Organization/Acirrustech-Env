@@ -1,4 +1,4 @@
-output "asg_name" {
-  value       = "${module.asg.asg_name}"
-  description = ""
+output "this_autoscaling_group_name" {
+  description = "The autoscaling group name"
+  value       = "${module.asg.this_autoscaling_group_name}"
 }
