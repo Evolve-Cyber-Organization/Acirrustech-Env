@@ -37,7 +37,11 @@ resource "aws_elb" "bar" {
   }
 }
 
-
+# Create a new load balancer attachment
+resource "aws_autoscaling_attachment" "asg_attachment_bar" {
+  autoscaling_group_name = "${module.artemis.asg.aws_autoscaling_group.this.name}"
+  elb                    = "${aws_elb.bar.id}"
+}
 
 
 
