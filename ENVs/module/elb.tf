@@ -26,8 +26,7 @@ resource "aws_elb" "bar" {
     interval            = 30
   }
 
-   https_listeners = 
-    {
+   https_listeners  {
       port               = 443
       protocol           = "HTTPS:443/"
       certificate_arn    = "arn:aws:acm:us-west-2:713287746880:certificate/bb493896-560e-4864-8719-25c2058089f3"
