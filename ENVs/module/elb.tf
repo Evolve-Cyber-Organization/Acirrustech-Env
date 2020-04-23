@@ -26,6 +26,15 @@ resource "aws_elb" "bar" {
     interval            = 30
   }
 
+   https_listeners = [
+    {
+      port               = 443
+      protocol           = "HTTPS"
+      certificate_arn    = "arn:aws:acm:us-west-2:713287746880:certificate/bb493896-560e-4864-8719-25c2058089f3"
+      target_group_index = 0
+    }
+  ]
+
   
   cross_zone_load_balancing   = true
   idle_timeout                = 400
@@ -82,17 +91,10 @@ resource "aws_elb" "bar" {
 #       backend_port     = 80
 #       target_type      = "instance"
 #     }
-#   ]
-
-# #   https_listeners = [
-# #     {
-# #       port               = 443
-# #       protocol           = "HTTPS"
-# #       certificate_arn    = "arn:aws:iam::123456789012:server-certificate/test_cert-123456789012"
-# #       target_group_index = 0
-# #     }
 # #   ]
 
+ 
+  
 #   http_tcp_listeners = [
 #     {
 #       port               = 80
