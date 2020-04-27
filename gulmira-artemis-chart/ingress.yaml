@@ -8,7 +8,7 @@ metadata:
 spec:
   rules:
   - host: {{ .Values.endpoint }}
-  - http: 
+  - http:
       paths:
       - path: /
         backend:
