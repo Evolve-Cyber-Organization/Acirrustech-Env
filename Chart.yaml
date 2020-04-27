@@ -1,0 +1,11 @@
+apiVersion: v1
+version: 1.10.1
+name: olgaoj-artemis
+appVersion: 1.10.1
+description: helm chart for artemis app
+maintainers:
+- name: Olga-devops
+- email: olgaojjeh@gmail.com
+home: https://github.com/Evolve-Cyber-Organization/Acirrustech-Env.git
+sources:
+- https://github.com/Evolve-Cyber-Organization/Acirrustech-Env.git
