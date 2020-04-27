@@ -6,3 +6,6 @@ description: this is a test chart for artemis
 maintainers:
 - name: mkarimi
 - email: mkrimidevops@gmail.com
+home: https://github.com/Evolve-Cyber-Organization/Acirrustech-Env.git
+sources:
+- https://github.com/Evolve-Cyber-Organization/Acirrustech-Env.git
