@@ -45,13 +45,13 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/tls-acme: "true"
   hosts:
-    - host: prod-olgaLchart.acirrustech.com
+    - host: prod-olgaL_chart.acirrustech.com
       paths: 
       - /
   #tls:
-  # - secretName: olgaLchart-example-tls
+  # - secretName: chart-example-tls
     # hosts:
-   #  - prod-olgaLchart.acirrustech.com
+   #  - prod-olgaL_chart.acirrustech.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
