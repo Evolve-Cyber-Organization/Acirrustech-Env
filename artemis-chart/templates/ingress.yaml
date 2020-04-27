@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: artemis
+spec:
+  rules:
+  - host: {{ .Values.endpoint }}
+  - http: 
+      paths:
+      - path: /
+        backend:
+          serviceName: artemis
+          servicePort: 80
