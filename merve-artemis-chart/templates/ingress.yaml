@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: merve-artemis
@@ -6,7 +6,7 @@ metadata:
    # nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - hosts: {{ .Values.endpoint }}
+  - host: {{ .Values.endpoint }}
   - http:
       paths:
       - path: /
