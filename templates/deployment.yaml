@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: olga-artemis-deploy
+  labels:
+    app: olga-artemis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: olga-artemis
+  template:
+    metadata:
+      labels:
+        app: olga-artemis
+    spec:
+      containers:
+      - name: olga-artemis
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
+        ports:
+        - containerPort: 5000
