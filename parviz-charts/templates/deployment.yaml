@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: artemis-parviz
+  labels:
+    app: artemis-parviz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: artemis-parviz
+  template:
+    metadata:
+      labels:
+        app: artemis-parviz
+    spec:
+      containers:
+      - name: artemis-parviz
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 5000

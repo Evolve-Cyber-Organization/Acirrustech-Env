@@ -1,0 +1,12 @@
+  
+apiVersion: v1
+kind: Service
+metadata:
+  name: artemis-parviz
+spec:
+  selector:
+    app: artemis-parviz
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
