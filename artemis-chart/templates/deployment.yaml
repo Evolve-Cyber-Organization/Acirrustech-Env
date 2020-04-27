@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: artemis
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: nginx
         ports:
         - containerPort: 5000
