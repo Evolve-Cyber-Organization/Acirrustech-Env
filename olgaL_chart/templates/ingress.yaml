@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: artemis-olgaL
+  name: artemis-olga123
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/ingress.class: nginx
@@ -12,7 +12,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: artemis
+          serviceName: artemis-olga123
           servicePort: 80
   tls:
   - hosts:

@@ -2,18 +2,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: artemis-olgaL
+  name: artemis-olga123
   labels:
-    app: artemis-olgaL
+    app: artemis-olga123
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: artemis-olgaL
+      app: artemis-olga123
   template:
     metadata:
       labels:
-        app: artemis-olgaL
+        app: artemis-olga123
     spec:
       containers:
       - name: artemis
