@@ -46,7 +46,8 @@ ingress:
     kubernetes.io/tls-acme: "true"
   hosts:
     - host: prod-chart.acirrustech.com
-      paths: []
+      paths: 
+      - /*
   tls:
    - secretName: chart-example-tls
      hosts:
