@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: 713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker:latest
+  repository: 713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
