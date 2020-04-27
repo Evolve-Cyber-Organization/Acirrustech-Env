@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "artemis-test-aizada.fullname" . }}-test-connection"
+  labels:
+    {{- include "artmis-test.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "artemis-test-aizada.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
