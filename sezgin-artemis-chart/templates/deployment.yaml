@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: artemis-sezgin
+  labels:
+    app: artemis-sezgin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: artemis-sezgin
+  template:
+    metadata:
+      labels:
+        app: artemis-sezgin
+    spec:
+      containers:
+      - name: artemis-sezgin
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 5000
