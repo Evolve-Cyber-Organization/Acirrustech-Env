@@ -2,9 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: artemis-gulmira
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/ingress.class: nginx
+  #annotations:
+    #cert-manager.io/cluster-issuer: letsencrypt-prod
+    #kubernetes.io/ingress.class: nginx
 spec:
   rules:
   - host: {{ .Values.endpoint }}
