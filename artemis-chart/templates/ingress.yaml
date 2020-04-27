@@ -14,3 +14,7 @@ spec:
         backend:
           serviceName: artemis
           servicePort: 80
+tls:
+  - hosts:
+    - {{ .Values.endpoint }}
+    secretName: dashboard-proxy-tls
