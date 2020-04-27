@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: artemis
+  name: artemis-aizada
 spec:
   selector:
-    app: artemis
+    app: artemis-aizada
   ports:
     - protocol: TCP
       port: 80
