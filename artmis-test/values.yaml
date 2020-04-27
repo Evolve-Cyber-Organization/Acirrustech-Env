@@ -40,14 +40,14 @@ service:
 
 ingress:
   enabled: true
-  annotations: {}
+  annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/tls-acme: "true"
   hosts:
     - host: prod-chart.acirrustech.com
-      paths: []
-  tls: []
+      paths: /
+  tls:
    - secretName: chart-example-tls
      hosts:
      - prod-chart.acirrustech.com
