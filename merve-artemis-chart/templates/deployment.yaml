@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: merve-artemis-deploy
+  labels:
+    app: merve-artemis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: merve-artemis
+  template:
+    metadata:
+      labels:
+        app: merve-artemis
+    spec:
+      containers:
+      - name: merve-artemis
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
+        ports:
+        - containerPort: 5000

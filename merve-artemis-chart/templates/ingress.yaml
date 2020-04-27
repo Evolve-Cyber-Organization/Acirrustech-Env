@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: merve-artemis
+  # annotations:
+   # nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - hosts: {{ .Values.endpoint }}
+  - http:
+      paths:
+      - path: /
+        # pathType: Prefix
+        backend:
+          serviceName: merve-artemis
+          servicePort: 80
