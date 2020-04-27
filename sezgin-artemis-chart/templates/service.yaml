@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: artemis
+  name: artemis-sezgin
 spec:
   selector:
     app: artemis-sezgin
