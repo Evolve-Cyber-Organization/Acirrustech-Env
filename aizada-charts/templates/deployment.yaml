@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: artemis-test-aizada
+  labels:
+    app: artemis-test-aizada
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: artemis-test-aizada
+  template:
+    metadata:
+      labels:
+        app: artemis-test-aizada
+    spec:
+      containers:
+      - name: artemis
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 5000
