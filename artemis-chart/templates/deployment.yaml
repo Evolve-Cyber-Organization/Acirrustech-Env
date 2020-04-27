@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: artemis
-        image: nginx
+        image: httpd
         ports:
         - containerPort: 5000
