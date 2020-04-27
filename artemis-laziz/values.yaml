@@ -1,4 +1,4 @@
-endpoint: laziz-prod-chart.acirrustech.com
+endpoint: laziz-chart.acirrustech.com
 image:
   repository: 713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker
   tag: latest
