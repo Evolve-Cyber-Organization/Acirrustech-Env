@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "artemis-test-aizada.fullname" . }}
+  name: {{ include "artemis-test.fullname" . }}
   labels:
-    {{- include "artemis-test-aizada.labels" . | nindent 4 }}
+    {{- include "artemis-test.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "artemis-test-aizada.selectorLabels" . | nindent 6 }}
+      {{- include "artemis-test.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "artemis-test-aizada.selectorLabels" . | nindent 8 }}
+        {{- include "artemis-test.selectorLabels" . | nindent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "artemis-test-aizada.serviceAccountName" . }}
+      serviceAccountName: {{ include "artemis-test.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
