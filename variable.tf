@@ -9,3 +9,7 @@ variable "docker_image" {
 variable "docker_image_tag" {
     default = "0.1"
 }
+
+variable "eks_domain_name" {
+    default = "acirrustech.com"
+}
