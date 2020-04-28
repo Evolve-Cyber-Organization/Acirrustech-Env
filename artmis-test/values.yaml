@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: 713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker
+  repository: ${docker_image}
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -45,7 +45,7 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/tls-acme: "true"
   hosts:
-    - host: prod-chart.acirrustech.com
+    - host: ${deployment_endpoint}
       paths: 
       - /
   #tls:
