@@ -1,5 +1,5 @@
 module "artemis_deploy" {
-  source  = "fuchicorp/chart/helm"
+  source  = "git::https://github.com/fuchicorp/helm-deploy.git"
   deployment_name        = "artemis"
   deployment_endpoint    = "prod-chart.${var.eks_domain_name}"
   deployment_path        = "artmis-test"
