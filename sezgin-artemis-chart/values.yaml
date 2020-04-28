@@ -79,3 +79,5 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+namespace: dev
