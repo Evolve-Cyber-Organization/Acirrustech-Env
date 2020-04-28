@@ -5,4 +5,5 @@ module "artemis_deploy" {
   docker_image           = "${var.docker_image}"
   docker_image_tag       = "${var.docker_image_tag}"
   deployment_path        = "artmis-test"
+  deployment_environment = "dev"
 }
