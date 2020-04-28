@@ -13,11 +13,3 @@ variable "docker_image_version" {
 variable "eks_domain_name" {
     default = "acirrustech.com"
 }
-
-variable "docker_image" {
-    default = "713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker:0.1"
-}
-
-variable "docker_image_tag" {
-    default = "0.1"
-}
