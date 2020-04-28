@@ -1,0 +1,57 @@
+---
+- name: Install and Configure NRPE on CentOS7 and Amazon-Linux
+  hosts: all
+
+  vars_prompt:
+    - name: "IP"
+      prompt: "Enter Server's IP"
+      private: no
+
+
+  tasks:
+    - name: Install epel-release repository on CentOS7
+      when: ansible_distribution == "CentOS"
+      yum:
+        name: epel-release
+        state: present
+
+    - name: Install epel-release repository on Amazon-Linux
+      when: ansible_distribution == "Amazon"
+      yum:
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+        state: present
+
+    - name: Enable epel-release repository on Amazon-Linux
+      when: ansible_distribution == "Amazon"
+      command: "yum-config-manager --enable epel"
+
+
+    - name: Install NRPE and Nrpe-plugins
+      yum:
+        name: "{{ plugins }}"
+      vars:
+        plugins:
+          - nrpe
+          - nagios-plugins
+
+
+    - name: Update Configuration file
+      lineinfile:
+        path: /etc/nagios/nrpe.cfg
+        regexp: '^allowed_hosts='
+        line: 'allowed_hosts=127.0.0.1 {{IP}}'
+
+
+    - name: Restart Service Amazon-Linux
+      when: ansible_distribution == "Amazon"
+      service:
+        name: nrpe
+        state: restarted
+        enabled: yes
+
+    - name: Restart Service Centos7
+      when: ansible_distribution == "CentOS"
+      systemd:
+        name: nrpe
+        state: restarted
+        enabled: yes
