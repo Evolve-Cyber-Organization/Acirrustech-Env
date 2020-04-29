@@ -8,7 +8,7 @@ image:
   repository: 713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart version.
-  tag: 0.3
+  tag: 0.2
 
 imagePullSecrets: []
 nameOverride: ""
