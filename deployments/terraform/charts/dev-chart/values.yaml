@@ -8,7 +8,7 @@ image:
   repository: 713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart version.
-  tag: 0.2
+  tag: 0.3
 
 imagePullSecrets: []
 nameOverride: ""
@@ -46,7 +46,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: sezgin-terraform.acirrustech.com
+    - host: dev.acirrustech.com
       paths: 
       - /
   # tls: []
