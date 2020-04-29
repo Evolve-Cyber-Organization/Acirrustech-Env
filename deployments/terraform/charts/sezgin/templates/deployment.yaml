@@ -1,35 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "artmis-test.fullname" . }}
+  name: {{ include "sezgin.fullname" . }}
   labels:
-    {{- include "artmis-test.labels" . | nindent 4 }}
+    {{- include "sezgin.labels" . | nindent 4 }}
 spec:
+{{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
+{{- end }}
   selector:
     matchLabels:
-      {{- include "artmis-test.selectorLabels" . | nindent 6 }}
+      {{- include "sezgin.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      labels:
-        {{- include "artmis-test.selectorLabels" . | nindent 8 }}
-    spec:
-    {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
+    {{- with .Values.podAnnotations }}
+      annotations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "artmis-test.serviceAccountName" . }}
+      labels:
+        {{- include "sezgin.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "sezgin.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 5000
+              containerPort: 80
               protocol: TCP
           livenessProbe:
             httpGet:
@@ -45,11 +51,11 @@ spec:
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-    {{- with .Values.affinity }}
+      {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
+      {{- end }}
+      {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
+      {{- end }}
