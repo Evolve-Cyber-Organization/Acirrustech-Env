@@ -2,7 +2,7 @@ module "artemis_deploy" {
   source  = "fuchicorp/chart/helm"
   deployment_name        = "artemis-sezgin2"
   deployment_endpoint    = "sezgin-terraform.${var.eks_domain_name}"
-  deployment_path        = "artemis-sezgin"
+  deployment_path        = "sezgin"
   deployment_environment = "dev"
 
    template_custom_vars    = {
