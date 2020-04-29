@@ -1,8 +1,9 @@
-# Default values for merve-artemis-chart.
+# Default values for merves-chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
+
 image:
   repository: 713287746880.dkr.ecr.us-west-2.amazonaws.com/artemis-docker
   pullPolicy: IfNotPresent
@@ -46,7 +47,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: merve.acirrustech.com
-      paths: 
+      paths:
       - /
   tls: []
   #  - secretName: chart-example-tls
