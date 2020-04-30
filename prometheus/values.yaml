@@ -966,7 +966,9 @@ pushgateway:
     ## pushgateway Ingress hostnames with optional path
     ## Must be provided if Ingress is enabled
     ##
-    hosts: []
+    hosts: 
+      - prometheus.acirrustech.com
+    path: /
     #   - pushgateway.domain.com
     #   - domain.com/pushgateway
 
