@@ -4,8 +4,6 @@ module "artemis_deploy" {
   deployment_endpoint    = "prod.${var.eks_domain_name}"
   deployment_path        = "prod-chart"
   deployment_environment = "prod"
-  
-
    template_custom_vars    = {
      docker_image           = "${var.docker_image_url}"
      docker_image_tag       = "${var.docker_image_version}"
