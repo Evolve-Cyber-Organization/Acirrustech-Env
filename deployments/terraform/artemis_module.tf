@@ -1,6 +1,6 @@
 module "artemis_deploy" {
   source  = "fuchicorp/chart/helm"
-  deployment_name        = "prod-chart"
+  deployment_name        = "prod-charts"
   deployment_endpoint    = "prod.${var.eks_domain_name}"
   deployment_path        = "prod-charts"
   deployment_environment = "prod"
