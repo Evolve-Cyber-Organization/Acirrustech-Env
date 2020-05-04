@@ -415,7 +415,7 @@ master:
   testEnabled: true
 
 agent:
-  enabled: false
+  enabled: true
   image: "jenkins/jnlp-slave"
   tag: "3.27-1"
   customJenkinsLabels: []
