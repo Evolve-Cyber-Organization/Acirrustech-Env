@@ -7,7 +7,7 @@ variable "docker_image_url" {
 }
 
 variable "docker_image_version" {
-    default = "0.2"
+    default = "0.3"
 }
 
 variable "domain_name" {
