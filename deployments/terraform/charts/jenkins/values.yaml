@@ -471,10 +471,10 @@ agent:
   # jenkins-agent: v1
 
   # Executed command when side container gets started
- # command:
-  #args: "${computer.jnlpmac} ${computer.name}"
+  command:
+  args: "${computer.jnlpmac} ${computer.name}"
   # Side container name
-  # sideContainerName: "jnlp"
+  sideContainerName: "jnlp"
   # Doesn't allocate pseudo TTY by default
   TTYEnabled: false
   # Max number of spawned agent
