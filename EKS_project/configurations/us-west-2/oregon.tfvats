@@ -11,7 +11,7 @@ subnet2 = "subnet-d9a0d992"
 
 
 cluster_name = "cluster"
-instance_type = "m4.medium"
+instance_type = "t2.medium"
 asg_max_size = "10" 
 asg_min_size = "2"
 asg_desired_capacity = "2"
