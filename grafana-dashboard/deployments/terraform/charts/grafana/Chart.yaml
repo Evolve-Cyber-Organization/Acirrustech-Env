@@ -1,10 +1,10 @@
-apiVersion: v2
+apiVersion: v1
 appVersion: 6.7.3
 description: The leading tool for querying and visualizing time series and metrics.
 engine: gotpl
 home: https://grafana.net
 icon: https://raw.githubusercontent.com/grafana/grafana/master/public/img/logo_transparent_400x.png
-ubeVersion: ^1.8.0-0
+kubeVersion: ^1.8.0-0
 maintainers:
 - email: zanhsieh@gmail.com
   name: zanhsieh
