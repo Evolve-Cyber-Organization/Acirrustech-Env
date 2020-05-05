@@ -10,19 +10,19 @@ resource "null_resource" "login" {
   }
 
   provisioner "local-exec" {
-    command = "kubectl create namesapce dev"
+    command = "kubectl create namespace dev"
   }
 
   provisioner "local-exec" {
-    command = "kubectl create namesapce qa"
+    command = "kubectl create namespace qa"
   }
 
   provisioner "local-exec" {
-    command = "kubectl create namesapce stage"
+    command = "kubectl create namespace stage"
   }
 
   provisioner "local-exec" {
-    command = "kubectl create namesapce prod"
+    command = "kubectl create namespace prod"
   }
 }
 
