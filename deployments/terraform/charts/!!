@@ -1,0 +1,17 @@
+" ============================================================================
+" Netrw Directory Listing                                        (netrw v149)
+"   /home/gulmira/Acirrustech-Env/deployments/terraform/charts/ingress-controller
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+" ============================================================================
+../
+./
+ci/
+templates/
+.helmignore
+Chart.yaml
+OWNERS
+README.md
+values.yaml
+.swp
