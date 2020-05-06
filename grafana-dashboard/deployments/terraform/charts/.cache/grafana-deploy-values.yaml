@@ -128,7 +128,7 @@ extraExposePorts: []
  #   type: ClusterIP
 
 ingress:
-  enabled: false
+  enabled: true
   # Values can be templated
   annotations: 
     kubernetes.io/ingress.class: nginx
