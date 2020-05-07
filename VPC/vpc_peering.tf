@@ -4,17 +4,6 @@ resource "aws_vpc_peering_connection" "pc" {
   auto_accept = true
 }
 
-# resource "aws_vpc" "vpc-virginia" {
-#   provider   = "aws.virginia"
-#   cidr_block = "16.0.0.0/16"
-# }
-
-# resource "aws_vpc" "vpc-ohio" {
-#   provider   = "aws.ohio"
-#   cidr_block = "198.0.0.0/16"
-# }
-
-
 
 resource "aws_route" "vpc_peering_route_virginia" {
   count                     = 2
